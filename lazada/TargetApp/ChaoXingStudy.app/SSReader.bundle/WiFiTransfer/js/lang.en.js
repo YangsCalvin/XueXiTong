@@ -1,0 +1,27 @@
+var STRINGS = {};
+
+STRINGS.WIFI_TRANS_TITLE = 'WiFi Transfer for Books';
+STRINGS.FILES_ON_DEVICE = 'Files on Your Device';
+STRINGS.FILENAME = 'Filename';
+STRINGS.FILE_SIZE = 'Size';
+STRINGS.FILE_OPER = 'Actions';
+STRINGS.CONFIRM_DELETE_BOOK = 'Delete this book?';
+STRINGS.DOWNLOAD_FILE = 'Download File';
+STRINGS.DELETE_FILE = 'Delete file';
+STRINGS.USE_ONE_BROWSER = 'Upload failed. Please use only ONE browser window to upload files.';
+STRINGS.UPLOAD_FAILED = 'Upload failed. Please restart WiFi Transfer service and reload this web page.';
+STRINGS.UNSUPPORTED_FILE_TYPE = 'Please choose EPUB, TXT or PDF files.';
+STRINGS.FILE_IN_QUEUE = 'The file is already in upload queue.';
+STRINGS.FILE_EXISTS = 'File exists on device. Please delete the old file first.';
+STRINGS.YOU_CHOOSE = 'You chose ';
+STRINGS.CHOSEN_FILE_COUNT = ' files, but only ';
+STRINGS.VALID_CHOSEN_FILE_COUNT = ' of them are valid.\nPlease choose EPUB, TXT or PDF files with unique filenames.';
+STRINGS.CANCEL = 'Cancel';
+STRINGS.SELECT_YOUR_FILES = 'Choose files to upload to Duokan Reader';
+STRINGS.SUPPORTED_FILE_TYPES = 'Support EPUB, TXT and PDF formats';
+STRINGS.CANNOT_CONNECT_SERVER = 'Cannot connect to WiFi transfer service. Please restart WiFi Transfer service and reload this web page.';
+STRINGS.DRAG_TO_HERE = "Drag files here";
+STRINGS.SELECT_BUTTON_LABLE1 = "Select Files";
+STRINGS.SELECT_BUTTON_LABLE2 = "Upload one or more files";
+STRINGS.SELECT_BUTTON_LABLE = "Select File";
+STRINGS.WIFI_AVAILABLE = "WiFi is available";

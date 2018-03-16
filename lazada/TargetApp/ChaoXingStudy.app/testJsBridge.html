@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JSBridge Test</title>
+    <script src="./CXJSBridge.bundle/CXJSBridge.js"></script>
+</head>
+
+<body>
+
+    <div style="margin-top:10px;margin-left:10px;">
+        <input type="button" name="" value="退出" onclick="processQuit()" />        
+        <input type="button" name="" value="语音" onclick="processVoiceRecognizer()" />
+        <input type="button" name="" value="扫描" onclick="processScaner()" />
+        <input type="button" name="" value="下载pdf" onclick="processDownload()" />
+        <input type="button" name="" value="下载epub" onclick="processDownloadEpub()" />
+        <input type="button" name="" value="测试超链" onclick="processTestOpenUrl()" />
+        <input type="button" name="" value="测试消息" onclick="processTestMessage()" />
+        <input type="button" name="" value="测试选择" onclick="processSelectOption()" />
+        
+        <p>
+        <input type="button" name="" value="云盘" onclick="processYunpan()" />
+        </p>
+        
+        <p><input type="text" name="" onclick="textOption()"/></p>
+      
+
+    </div>
+    
+    <script type="text/javascript">
+    function log(text)
+    {
+        var tmp = document.createElement('p');
+        tmp.innerText = text;
+        document.body.appendChild(tmp);
+    };
+    
+    function processQuit()
+    {
+        jsBridge.postNotification('CLIENT_EXIT_LEVEL',{level:'1'});
+    };
+        
+    function processVoiceRecognizer()
+    {
+        jsBridge.postNotification('CLIENT_SPEECH_RECOGNIZER',{message:''});
+    };
+        
+    function processScaner()
+    {
+        jsBridge.postNotification('CLIENT_BARCODE_SCANNER',{message:'hello oc:'});
+    };
+    
+    function processDownload()
+    {
+        jsBridge.postNotification('CLIENT_DOWNLOAD_BOOK',{message:'',bookName:'测试pdf',remoteUrl:'http://114.112.91.109:8098/01.pdf',coverUrl:'http://www.pdf456.com/uploads/allimg/130514/1-1305141451430-L.jpg',type:'pdf',uniqueID:''});
+    };
+    
+    function processDownloadEpub()
+    {
+        jsBridge.postNotification('CLIENT_DOWNLOAD_BOOK',{message:'',bookName:'测试epub',remoteUrl:'',coverUrl:'',type:'epub',uniqueID:''});
+    };
+    
+    function processTestOpenUrl()
+    {
+        jsBridge.postNotification('CLIENT_OPEN_URL', { "title": "测试", "loadType": "1", "webUrl": "http://www.baidu.com"});
+    }
+    
+    function processTestMessage()
+    {
+        jsBridge.postNotification('CLIENT_DISPLAY_MESSAGE', { "message": "战洋是个小美妞"});
+    }
+    
+    function textOption()
+    {
+        jsBridge.postNotification('CLIENT_INPUT_OPTION_BAR', { "show": "1"});
+    }
+    
+    function processSelectOption()
+    {
+        jsBridge.postNotification('CLIENT_SELECT_OPTION_BAR', { "show": "1"});
+    }
+    
+    function processYunpan()
+    {
+        jsBridge.postNotification('CLIENT_SELECT_CLOUDRES');
+    }
+
+
+    jsBridge.bind('CLIENT_BARCODE_SCANNER', function(object){ log(object.message);});
+    jsBridge.bind('CLIENT_SPEECH_RECOGNIZER', function(object){ log(object.message);});
+
+    
+    </script> 
+
+</body>
+</html>
+

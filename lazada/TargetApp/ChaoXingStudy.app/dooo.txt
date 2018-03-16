@@ -1,0 +1,215 @@
+#include "PDXHeader.h"
+#include "Crc32.h"
+#include "WanJuanEncrypt.h"
+
+	char m_PDXpath[256];
+	MobilePDGFileHeader *m_pPDXFileHeader;
+	vtIndexDataNode     m_vtPDXIndexData;
+	WanJuanEncrypt::PasswordEncrypt		m_WanJuanEncryptPasswordEncrypt;
+
+bool PDGManager::ReadIndexDataToFile(FILE *&fpOrs,long pos,long filelen,vtIndexDataNode &vtData,char *strmima)
+{  	 
+	if (fpOrs==NULL)
+		return false;
+
+	if (0 != filelen%sizeof(IndexDataStruct))
+		return false;
+	int Structszie=filelen/sizeof(IndexDataStruct);
+	if (Structszie<=0)
+		return false;
+	
+	IndexDataStruct *pTempData=new IndexDataStruct[Structszie];
+	if (pTempData==NULL)
+		return false;	
+
+	fseek(fpOrs,pos,SEEK_SET);
+	if(filelen!=fread((BYTE *)pTempData,1,filelen,fpOrs))
+	{
+		delete []pTempData;
+		pTempData = NULL;	
+		return false;
+	}
+
+	if(!(m_WanJuanEncryptPasswordEncrypt.Decrypt((BYTE *)pTempData,filelen,1,strmima)))
+	{
+		delete []pTempData;
+		pTempData = NULL;		 
+		return false;
+	}
+	 
+	for (int i=0; i<Structszie;i++)
+	{  			
+		vtData.push_back(pTempData[i]);
+	} 	
+	
+	delete []pTempData;
+	pTempData = NULL; 		
+	return true; 
+} 
+
+
+
+SS_BOOL PDGManager::readPDGfromEncodePDX(char *strPDXpath,char **pPDGbuff,int &length)
+{	
+	char tarpath[_MAX_PATH];
+	char fname[_MAX_FNAME];
+	char ext[_MAX_EXT];
+
+	bool bfind=false;
+	FILE *fpOrs=NULL;
+	long filePose=0; 
+	long orsfilelen=0;
+	length=0;
+	int sizeToEncrypt=0;
+	_splitpath(strPDXpath, NULL, NULL, fname, ext);	
+	sprintf(tarpath,"%s%s",fname, ext);	
+//	strcpy(tarpath,	fname);
+	if (m_pPDXFileHeader==NULL)
+	{
+		return false; 
+	}
+
+	for (vtIndexDataNode::iterator first=m_vtPDXIndexData.begin(); first!=m_vtPDXIndexData.end();first++)
+	{  		
+		memset(fname,0,_MAX_FNAME);
+		memcpy(fname,(*first).FileName,12);
+	 	if (_stricmp(tarpath,fname)==0)
+	 	{
+			bfind=true;
+			length  =(*first).DataSize;
+			filePose=(*first).DataPos;
+			break;
+	 	}
+	} 		
+
+	if (!bfind)
+	{
+		return SS_FALSE;
+	}
+
+	*pPDGbuff=new char[length+1];
+	if (NULL==(*pPDGbuff))
+		goto ERROP;	
+	memset((*pPDGbuff),0,length+1);
+	
+	if(NULL==(fpOrs=fopen(m_PDXpath,"rb")))
+		goto ERROP;	
+
+	fseek(fpOrs,0,SEEK_END);
+	if(-1==(orsfilelen=ftell(fpOrs)))  //Get pdg file Length
+		goto ERROP;
+	
+	if (orsfilelen<=(filePose+length))
+		goto ERROP;
+	
+	fseek(fpOrs,filePose,SEEK_SET);
+	if(length!=fread((*pPDGbuff),1,length,fpOrs))
+		goto ERROP;
+
+	fclose(fpOrs);
+	fpOrs=NULL;
+
+	sizeToEncrypt=((length>=1024)?1024:length); 
+	if(!(m_WanJuanEncryptPasswordEncrypt.Decrypt((BYTE *)(*pPDGbuff),sizeToEncrypt,
+		m_pPDXFileHeader->FileInfo.EncryptAlgorithm,m_RLFile.m_BookAuth)))
+		goto ERROP;
+
+	return SS_TRUE;
+ERROP:
+	if (fpOrs)
+	{
+		fclose(fpOrs);
+		fpOrs=NULL;
+	}
+
+	if ((*pPDGbuff))
+	{
+		delete (*pPDGbuff);
+		(*pPDGbuff)=NULL;
+	}
+	return SS_FALSE;
+}
+
+bool   PDGManager::readPDXinfo(const char*filePath)
+{
+	char* key = NULL;
+	char tempMimaKey[256];
+	memset(tempMimaKey,0,256);
+	strcpy(tempMimaKey,"ljhd");
+	m_vtPDXIndexData.clear();
+	m_RLFile.CloseAllFetch(true);
+	if (m_pPDXFileHeader)
+	{
+		delete m_pPDXFileHeader;
+		m_pPDXFileHeader=NULL;
+	}
+	
+	m_pPDXFileHeader=new MobilePDGFileHeader;
+	if (m_pPDXFileHeader==NULL)
+	{
+		return false; 
+	}
+	
+	int orsfilelen=0;
+	int Readfilelen=0;
+	FILE *fpOrs=NULL; 
+	if(NULL==(fpOrs=fopen(filePath,"rb")))
+		goto ERROP;
+	
+	fseek(fpOrs,0,SEEK_END);
+	if(-1==(orsfilelen=ftell(fpOrs)))  //Get pdg file Length
+		goto ERROP;
+	
+	if (orsfilelen<=sizeof(MobilePDGFileHeader))
+		goto ERROP;
+	
+	fseek(fpOrs,0,SEEK_SET);
+	memset(m_pPDXFileHeader, 0, sizeof(MobilePDGFileHeader));	
+	Readfilelen=sizeof(MobilePDGFileHeader);
+	if(Readfilelen!=fread(m_pPDXFileHeader,1,sizeof(MobilePDGFileHeader),fpOrs))
+		goto ERROP;
+	
+	if ((g_snSignature1 != m_pPDXFileHeader->VerInfo.Signature1)||
+		(g_snSignature2 != m_pPDXFileHeader->VerInfo.Signature2)||
+		(1!=m_pPDXFileHeader->FileInfo.FileType))
+		goto ERROP;
+	
+	if (m_pPDXFileHeader->FileInfo.CRC32 != m_crc32.Get_CRC_Back(fpOrs,
+		sizeof(MobilePDGFileHeader)+m_pPDXFileHeader->FileInfo.DataLength))
+		goto ERROP;
+	
+	if (0!=CDEURL::ctsMakeKey((char *)m_pPDXFileHeader->FileInfo.MakeInfor,&key,tempMimaKey))
+		goto ERROP;
+	
+	strcpy(tempMimaKey,key);
+	if (key)
+	{
+		delete []key;
+		key=NULL;
+	}
+
+	if (!ReadIndexDataToFile(fpOrs,m_pPDXFileHeader->FileInfo.IndexPos,
+		m_pPDXFileHeader->FileInfo.IndexLen,m_vtPDXIndexData,tempMimaKey))
+		goto ERROP;
+
+	if (fpOrs)
+	{
+		fclose(fpOrs);
+		fpOrs=NULL;
+	} 
+	return true;
+ERROP:
+	if (fpOrs)
+	{
+		fclose(fpOrs);
+		fpOrs=NULL;
+	}
+	m_vtPDXIndexData.clear();
+	
+	if (m_pPDXFileHeader)
+	{
+		delete m_pPDXFileHeader;
+		m_pPDXFileHeader=NULL;
+	}
+	return false;	 
+}

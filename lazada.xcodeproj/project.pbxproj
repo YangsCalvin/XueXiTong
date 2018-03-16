@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18A076CB204FCC0B0026CCDD /* tools.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A076C9204FCC0B0026CCDD /* tools.h */; };
+		18A076CC204FCC0B0026CCDD /* tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A076CA204FCC0B0026CCDD /* tools.m */; };
+		18BC8C602043CE0B0056B00F /* MethodTraceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BC8C5F2043CE0B0056B00F /* MethodTraceConfig.plist */; };
+		18BC8C632043CE0B0056B00F /* put ipa or app here in Resources */ = {isa = PBXBuildFile; fileRef = 18BC8C622043CE0B0056B00F /* put ipa or app here */; };
+		18BC8C6B2043CE0B0056B00F /* liblazadaDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18BC8C6A2043CE0B0056B00F /* liblazadaDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		18BC8C702043CE0B0056B00F /* Cycript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC8C6F2043CE0B0056B00F /* Cycript.framework */; };
+		18BC8C722043CE0B0056B00F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC8C712043CE0B0056B00F /* JavaScriptCore.framework */; };
+		18BC8C742043CE0B0056B00F /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC8C732043CE0B0056B00F /* RevealServer.framework */; };
+		18BC8C762043CE0B0056B00F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC8C752043CE0B0056B00F /* Foundation.framework */; };
+		18BC8C782043CE0B0056B00F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC8C772043CE0B0056B00F /* UIKit.framework */; };
+		18BC8C7C2043CE0B0056B00F /* ANYMethodLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BC8C7B2043CE0B0056B00F /* ANYMethodLog.h */; };
+		18BC8C7E2043CE0B0056B00F /* ANYMethodLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C7D2043CE0B0056B00F /* ANYMethodLog.m */; };
+		18BC8C802043CE0B0056B00F /* MethodTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BC8C7F2043CE0B0056B00F /* MethodTrace.h */; };
+		18BC8C822043CE0B0056B00F /* MethodTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C812043CE0B0056B00F /* MethodTrace.m */; };
+		18BC8C872043CE0B0056B00F /* AntiAntiDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C862043CE0B0056B00F /* AntiAntiDebug.m */; };
+		18BC8C8A2043CE0B0056B00F /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C892043CE0B0056B00F /* fishhook.c */; };
+		18BC8C8C2043CE0B0056B00F /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BC8C8B2043CE0B0056B00F /* fishhook.h */; };
+		18BC8C8F2043CE0B0056B00F /* lazadaDylib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C8E2043CE0B0056B00F /* lazadaDylib.mm */; };
+		18BC8C912043CE0B0056B00F /* lazadaDylib.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BC8C902043CE0B0056B00F /* lazadaDylib.h */; };
+		18BC8C932043CE0B0056B00F /* lazadaDylib.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC8C922043CE0B0056B00F /* lazadaDylib.m */; };
+		18C095E3205B500300D4D666 /* MPMoviePlayeControllerNew.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C095E1205B500300D4D666 /* MPMoviePlayeControllerNew.h */; };
+		18C095E4205B500300D4D666 /* MPMoviePlayeControllerNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C095E2205B500300D4D666 /* MPMoviePlayeControllerNew.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18BC8C6C2043CE0B0056B00F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BC8C512043CE0B0056B00F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BC8C692043CE0B0056B00F;
+			remoteInfo = lazadaDylib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18BC8C592043CE0B0056B00F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18BC8C6B2043CE0B0056B00F /* liblazadaDylib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		18A076C9204FCC0B0026CCDD /* tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		18A076CA204FCC0B0026CCDD /* tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tools.m; sourceTree = "<group>"; };
+		18BC8C5C2043CE0B0056B00F /* lazada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lazada.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BC8C5F2043CE0B0056B00F /* MethodTraceConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MethodTraceConfig.plist; sourceTree = "<group>"; };
+		18BC8C622043CE0B0056B00F /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; name = "put ipa or app here"; path = "TargetApp/put ipa or app here"; sourceTree = "<group>"; };
+		18BC8C642043CE0B0056B00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BC8C6A2043CE0B0056B00F /* liblazadaDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblazadaDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BC8C6F2043CE0B0056B00F /* Cycript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cycript.framework; path = Library/Frameworks/Cycript.framework; sourceTree = DEVELOPER_DIR; };
+		18BC8C712043CE0B0056B00F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		18BC8C732043CE0B0056B00F /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = Library/Frameworks/RevealServer.framework; sourceTree = DEVELOPER_DIR; };
+		18BC8C752043CE0B0056B00F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		18BC8C772043CE0B0056B00F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		18BC8C7B2043CE0B0056B00F /* ANYMethodLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ANYMethodLog.h; path = MethodTrace/ANYMethodLog.h; sourceTree = "<group>"; };
+		18BC8C7D2043CE0B0056B00F /* ANYMethodLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ANYMethodLog.m; path = MethodTrace/ANYMethodLog.m; sourceTree = "<group>"; };
+		18BC8C7F2043CE0B0056B00F /* MethodTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MethodTrace.h; path = MethodTrace/MethodTrace.h; sourceTree = "<group>"; };
+		18BC8C812043CE0B0056B00F /* MethodTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MethodTrace.m; path = MethodTrace/MethodTrace.m; sourceTree = "<group>"; };
+		18BC8C842043CE0B0056B00F /* lazadaDylib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lazadaDylib-Prefix.pch"; sourceTree = "<group>"; };
+		18BC8C862043CE0B0056B00F /* AntiAntiDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AntiAntiDebug.m; path = AntiAntiDebug/AntiAntiDebug.m; sourceTree = "<group>"; };
+		18BC8C892043CE0B0056B00F /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = fishhook/fishhook.c; sourceTree = "<group>"; };
+		18BC8C8B2043CE0B0056B00F /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = fishhook/fishhook.h; sourceTree = "<group>"; };
+		18BC8C8D2043CE0B0056B00F /* lazadaDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = lazadaDylib.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		18BC8C8E2043CE0B0056B00F /* lazadaDylib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = lazadaDylib.mm; sourceTree = "<group>"; };
+		18BC8C902043CE0B0056B00F /* lazadaDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lazadaDylib.h; sourceTree = "<group>"; };
+		18BC8C922043CE0B0056B00F /* lazadaDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lazadaDylib.m; sourceTree = "<group>"; };
+		18C095E1205B500300D4D666 /* MPMoviePlayeControllerNew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMoviePlayeControllerNew.h; sourceTree = "<group>"; };
+		18C095E2205B500300D4D666 /* MPMoviePlayeControllerNew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMoviePlayeControllerNew.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18BC8C562043CE0B0056B00F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BC8C672043CE0B0056B00F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BC8C722043CE0B0056B00F /* JavaScriptCore.framework in Frameworks */,
+				18BC8C742043CE0B0056B00F /* RevealServer.framework in Frameworks */,
+				18BC8C702043CE0B0056B00F /* Cycript.framework in Frameworks */,
+				18BC8C762043CE0B0056B00F /* Foundation.framework in Frameworks */,
+				18BC8C782043CE0B0056B00F /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18BC8C502043CE0B0056B00F = {
+			isa = PBXGroup;
+			children = (
+				18BC8C5E2043CE0B0056B00F /* lazada */,
+				18BC8C792043CE0B0056B00F /* lazadaDylib */,
+				18BC8C6E2043CE0B0056B00F /* Frameworks */,
+				18BC8C5D2043CE0B0056B00F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18BC8C5D2043CE0B0056B00F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C5C2043CE0B0056B00F /* lazada.app */,
+				18BC8C6A2043CE0B0056B00F /* liblazadaDylib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18BC8C5E2043CE0B0056B00F /* lazada */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C5F2043CE0B0056B00F /* MethodTraceConfig.plist */,
+				18BC8C642043CE0B0056B00F /* Info.plist */,
+				18BC8C612043CE0B0056B00F /* TargetApp */,
+			);
+			path = lazada;
+			sourceTree = "<group>";
+		};
+		18BC8C612043CE0B0056B00F /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C622043CE0B0056B00F /* put ipa or app here */,
+			);
+			name = TargetApp;
+			sourceTree = "<group>";
+		};
+		18BC8C6E2043CE0B0056B00F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C6F2043CE0B0056B00F /* Cycript.framework */,
+				18BC8C712043CE0B0056B00F /* JavaScriptCore.framework */,
+				18BC8C732043CE0B0056B00F /* RevealServer.framework */,
+				18BC8C752043CE0B0056B00F /* Foundation.framework */,
+				18BC8C772043CE0B0056B00F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18BC8C792043CE0B0056B00F /* lazadaDylib */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C8D2043CE0B0056B00F /* lazadaDylib.xm */,
+				18BC8C8E2043CE0B0056B00F /* lazadaDylib.mm */,
+				18BC8C902043CE0B0056B00F /* lazadaDylib.h */,
+				18BC8C922043CE0B0056B00F /* lazadaDylib.m */,
+				18C095E1205B500300D4D666 /* MPMoviePlayeControllerNew.h */,
+				18C095E2205B500300D4D666 /* MPMoviePlayeControllerNew.m */,
+				18BC8C7A2043CE0B0056B00F /* MethodTrace */,
+				18BC8C852043CE0B0056B00F /* AntiAntiDebug */,
+				18BC8C882043CE0B0056B00F /* fishhook */,
+				18BC8C832043CE0B0056B00F /* Supporting Files */,
+				18A076C9204FCC0B0026CCDD /* tools.h */,
+				18A076CA204FCC0B0026CCDD /* tools.m */,
+			);
+			path = lazadaDylib;
+			sourceTree = "<group>";
+		};
+		18BC8C7A2043CE0B0056B00F /* MethodTrace */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C7B2043CE0B0056B00F /* ANYMethodLog.h */,
+				18BC8C7D2043CE0B0056B00F /* ANYMethodLog.m */,
+				18BC8C7F2043CE0B0056B00F /* MethodTrace.h */,
+				18BC8C812043CE0B0056B00F /* MethodTrace.m */,
+			);
+			name = MethodTrace;
+			sourceTree = "<group>";
+		};
+		18BC8C832043CE0B0056B00F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C842043CE0B0056B00F /* lazadaDylib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18BC8C852043CE0B0056B00F /* AntiAntiDebug */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C862043CE0B0056B00F /* AntiAntiDebug.m */,
+			);
+			name = AntiAntiDebug;
+			sourceTree = "<group>";
+		};
+		18BC8C882043CE0B0056B00F /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				18BC8C892043CE0B0056B00F /* fishhook.c */,
+				18BC8C8B2043CE0B0056B00F /* fishhook.h */,
+			);
+			name = fishhook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		18BC8C682043CE0B0056B00F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BC8C912043CE0B0056B00F /* lazadaDylib.h in Headers */,
+				18BC8C7C2043CE0B0056B00F /* ANYMethodLog.h in Headers */,
+				18A076CB204FCC0B0026CCDD /* tools.h in Headers */,
+				18BC8C802043CE0B0056B00F /* MethodTrace.h in Headers */,
+				18C095E3205B500300D4D666 /* MPMoviePlayeControllerNew.h in Headers */,
+				18BC8C8C2043CE0B0056B00F /* fishhook.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		18BC8C5B2043CE0B0056B00F /* lazada */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BC8C992043CE0B0056B00F /* Build configuration list for PBXNativeTarget "lazada" */;
+			buildPhases = (
+				18BC8C552043CE0B0056B00F /* Sources */,
+				18BC8C562043CE0B0056B00F /* Frameworks */,
+				18BC8C572043CE0B0056B00F /* ShellScript */,
+				18BC8C582043CE0B0056B00F /* Resources */,
+				18BC8C592043CE0B0056B00F /* CopyFiles */,
+				18BC8C5A2043CE0B0056B00F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BC8C6D2043CE0B0056B00F /* PBXTargetDependency */,
+			);
+			name = lazada;
+			productName = lazada;
+			productReference = 18BC8C5C2043CE0B0056B00F /* lazada.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18BC8C692043CE0B0056B00F /* lazadaDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BC8C962043CE0B0056B00F /* Build configuration list for PBXNativeTarget "lazadaDylib" */;
+			buildPhases = (
+				18BC8C652043CE0B0056B00F /* ShellScript */,
+				18BC8C662043CE0B0056B00F /* Sources */,
+				18BC8C672043CE0B0056B00F /* Frameworks */,
+				18BC8C682043CE0B0056B00F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lazadaDylib;
+			productName = lazadaDylib;
+			productReference = 18BC8C6A2043CE0B0056B00F /* liblazadaDylib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18BC8C512043CE0B0056B00F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = MonkeyApp;
+				TargetAttributes = {
+					18BC8C5B2043CE0B0056B00F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					18BC8C692043CE0B0056B00F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 18BC8C542043CE0B0056B00F /* Build configuration list for PBXProject "lazada" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18BC8C502043CE0B0056B00F;
+			productRefGroup = 18BC8C5D2043CE0B0056B00F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18BC8C5B2043CE0B0056B00F /* lazada */,
+				18BC8C692043CE0B0056B00F /* lazadaDylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18BC8C582043CE0B0056B00F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BC8C632043CE0B0056B00F /* put ipa or app here in Resources */,
+				18BC8C602043CE0B0056B00F /* MethodTraceConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18BC8C572043CE0B0056B00F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/pack.sh;
+		};
+		18BC8C5A2043CE0B0056B00F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/Tools/pack.sh codesign";
+		};
+		18BC8C652043CE0B0056B00F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18BC8C552043CE0B0056B00F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BC8C662043CE0B0056B00F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BC8C872043CE0B0056B00F /* AntiAntiDebug.m in Sources */,
+				18BC8C822043CE0B0056B00F /* MethodTrace.m in Sources */,
+				18BC8C8A2043CE0B0056B00F /* fishhook.c in Sources */,
+				18BC8C932043CE0B0056B00F /* lazadaDylib.m in Sources */,
+				18C095E4205B500300D4D666 /* MPMoviePlayeControllerNew.m in Sources */,
+				18BC8C7E2043CE0B0056B00F /* ANYMethodLog.m in Sources */,
+				18A076CC204FCC0B0026CCDD /* tools.m in Sources */,
+				18BC8C8F2043CE0B0056B00F /* lazadaDylib.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18BC8C6D2043CE0B0056B00F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BC8C692043CE0B0056B00F /* lazadaDylib */;
+			targetProxy = 18BC8C6C2043CE0B0056B00F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		18BC8C942043CE0B0056B00F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18BC8C952043CE0B0056B00F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18BC8C972043CE0B0056B00F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9KCEX3M8Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "lazadaDylib/lazadaDylib-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/liblazadaDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"lazadaDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		18BC8C982043CE0B0056B00F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = W9KCEX3M8Z;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "lazadaDylib/lazadaDylib-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/liblazadaDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"lazadaDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18BC8C9A2043CE0B0056B00F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9KCEX3M8Z;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = lazada/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssreader.ChaoXingStudy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		18BC8C9B2043CE0B0056B00F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9KCEX3M8Z;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = lazada/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssreader.ChaoXingStudy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18BC8C542043CE0B0056B00F /* Build configuration list for PBXProject "lazada" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BC8C942043CE0B0056B00F /* Debug */,
+				18BC8C952043CE0B0056B00F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BC8C962043CE0B0056B00F /* Build configuration list for PBXNativeTarget "lazadaDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BC8C972043CE0B0056B00F /* Debug */,
+				18BC8C982043CE0B0056B00F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BC8C992043CE0B0056B00F /* Build configuration list for PBXNativeTarget "lazada" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BC8C9A2043CE0B0056B00F /* Debug */,
+				18BC8C9B2043CE0B0056B00F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18BC8C512043CE0B0056B00F /* Project object */;
+}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0px; padding:0px;}
+body{font:12px/1.5 微软雅黑; color:#333;background:#f5f5f5;}
+table{border-spacing:0px; border-collapse:collapse;width:100%; border:0px;margin:0;padding:0;}
+ul{list-style-type:none;}
+a{color:#333; text-decoration:none;}
+a:hover{color:#0e6fe7; border: 1px solid;}
+img{border:0px;}
+.clearfix{overflow:hidden; zoom:1;}
+.clear{clear:both; height:0px; font-size:0px; line-height:0px; overflow:hidden;}
+.icons{float:left; font-size:0px; line-height:0px; overflow:hidden; display:inline; background:url(../images/icons.gif) no-repeat;}
+.fl{float:left;}
+.fr{float:right;}
+.cor{color:#999;}
+
+.wrap{width:920px;margin:0 auto;}
+.head{height:78px;background:#ebf0f2;border-bottom:1px solid #fbfcfc;-webkit-box-shadow:0 1px 1px #bdbdbd;-moz-box-shadow:0 1px 1px #bdbdbd;box-shadow:0 1px 1px #bdbdbd;}
+.head .wrap{padding-top:10px;}
+.head .logo{width:293px;height:62px;background:url(../images/logo.gif) no-repeat;}
+.content{padding-top:25px;}
+.content .tit .choice{width:200px;text-align:center;}
+.content .tit .choice p span{display:block;width:177px;height:50px;line-height:50px;text-align:center;background:#0e6fe7;font-size:24px;
+color:#fff;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.content .tit .choice p input{ 
+	cursor: pointer;
+    height: 50px;
+    opacity: 0;
+    position: absolute;
+    right: 274px;
+    top: 104px;
+    width: 177px;}
+.content .tit .choice .cor{line-height:18px;margin-top:10px;font-size:16px;}
+.content .tit .wifi h1{font-size:28px;font-weight:normal;color:#0e6fe7;}
+.content .tit .wifi p{color:#666;font-size:18px;margin-top:5px;}
+.content .tit .wifi .cor{color:#999;font-size:14px;}
+.content .tablist{margin-top:20px;border:1px solid #ccc;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#fff;padding-bottom:100px;}
+.content .tablist table th{border-bottom:1px solid #ccc;border-right:1px solid #ccc;height:39px;background:url(../images/th_bg.gif) repeat-x;text-align:left;padding-left:20px;font-size:18px;font-weight:normal;}
+.content .tablist table .last{border-right:0;}
+.content .tablist table td{border-bottom:1px solid #ccc;height:45px;line-height:45px;padding-left:20px;font-size:16px;}
+.content .tablist table .rate{display:block;width:45%;border-bottom:4px solid #0e6fe7;margin-left:-20px;padding-left:20px;}
+.content .tablist table .down{width:16px;height:15px;background-position:left top;}
+.content .tablist table .delete{width:14px;height:14px;background-position:-18px top;margin-left:10px;}
+
+
+

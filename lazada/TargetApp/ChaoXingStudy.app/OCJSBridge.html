@@ -1,0 +1,879 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=0.5, maximum-scale=1, user-scalable=yes" />
+<meta charset="utf-8">
+<title>OCJSBridge</title>
+
+<!--<script type="text/javascript" src="/res/js/json/json2.js"></script>-->
+<script type="text/javascript" src="http://mc.m.5read.com/CXJSBridge.js"></script>
+<script type="text/javascript" src="cxVersion.js"></script>
+</head>
+
+<body>
+welcome OCJSBridge  &nbsp&nbsp&nbsp
+<script>
+var myDate = new Date();  
+document.write(myDate.toLocaleString());  
+</script>
+<br /><br />
+      
+     
+     <input type="button" value="加入小组-不需要验证"   onclick="return addGroup1()"  />&nbsp;&nbsp;网络小说
+     jsBridge.postNotification('CLIENT_ADDTO_GROUP',  {"groupInfo":'{"id":867233,"isCheck":0}',"uid":"22328615"});
+     <br /><br />
+     <input type="button" value="加入小组-需要验证"   onclick="return addGroup2()"  />&nbsp;&nbsp;网络小说
+     jsBridge.postNotification('CLIENT_ADDTO_GROUP',  {"groupInfo":'{"id":867233,"isCheck":1}',"uid":"22328615"});
+     <br /><br />
+     <input type="button" value="loadType=0"   onclick="return skip('0','')"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':'0'  ,'webUrl':url});
+     <br /><br />
+     <input type="button" value="loadType=0+INNER"   onclick="return skip('0','#INNER')"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':'0'  ,'webUrl':url#INNER});
+     <br /><br />
+     <input type="button" value="loadType=1"   onclick="return skip('1','')"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':'1'  ,'webUrl':url});
+     <br /><br />
+     <input type="button" value="loadType=2"   onclick="return skip('2','')"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':'2'  ,'webUrl':url});
+     <br /><br />
+     <input type="button" value="loadType=3"   onclick="return skip('3','')"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':'3'  ,'webUrl':url});
+     <br /><br />
+     <input type="button" value="href"   onclick="return skip2()"  />&nbsp;&nbsp;
+     window.location.href = url;
+     <br /><br />
+     <input type="button" value="退出app"   onclick="return exit()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_EXIT_WEBAPP', {}) ;
+     <br /><br />
+     <input type="button" value="打开语音识别"   onclick="return speach()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_SPEECH_RECOGNIZER', {}) ;
+     <br /><br />
+     <input type="button" value="打开条码扫描"   onclick="return barcode()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_BARCODE_SCANNER', {}) ;
+     <br /><br />
+     
+     <input type="button" value="打开视频"   onclick="return video()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_VIDEO_PLAYER', {"videolist":[{ "videopathm3u8":m3u8, "videopathmp4": mp4,"title":"麻将文化1"},{ "videopathm3u8":m3u8, "videopathmp4": mp4,"title":"麻将文化2"}],"title": "麻将"}) ;
+     <br /><br />
+     
+     <input type="button" value="打开音频"   onclick="return playAudio()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_AUDIO_PLAYER', {}) ;
+     <br /><br />
+     
+     <input type="button" value="获取当前位置坐标"   onclick="return getlocation()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_USER_LOCATION", {} ) ;
+     <br /><br />
+     
+     <input type="button" value="sso登录状态"   onclick="return loginStatus('')"  />&nbsp;&nbsp;
+     <input type="button" value="泛雅登录状态"   onclick="return loginStatus('cx_fanya')"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_LOGIN_STATUS", {"accountKey":""} ) ;
+     <br /><br />
+     
+     <input type="button" value="客户端登录"   onclick="return login()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_LOGIN", {"accountKey":"cx_opac"} ) ;
+     <br /><br />
+     
+     <input type="button" value="获取在架图书"   onclick="return getBooks()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_BOOKS_ON_SHELF", {}) ;
+     <br /><br />
+     
+     <input type="button" value="打开图书页详情"   onclick="return bookDetail()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_OPEN_BOOK_DETAIL", {"dxNumber":"000011657689", "d":"08903202d03c1cb664cbf8b35d798acf", "languageType":0} ) ;
+     <br /><br />
+     
+     <input type="button" value="下载图书"   onclick="return downloadBook()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_DOWNLOAD_BOOK', {"type": "pdzx", "remoteUrl": "http://epubrss.superlib.com/epubpdzx/151123/TS14001633.pdzx", "bookName": "狼王巴克:野性的呼唤", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+     <br /><br />
+     
+     <input type="button" value="在线阅读图书"   onclick="return readBook()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_READ_BOOK', {"type": "pdzx", "remoteUrl": "http://epubrss.superlib.com/epubpdzx/151123/TS14001633.pdzx", "bookName": "狼王巴克:野性的呼唤", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+     <br /><br />
+     
+     <input type="button" value="在线阅读图书-pdz"   onclick="return readBook2()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_READ_BOOK', {"type": "pdz/path","uniqueID":"", "remoteUrl": "book://read.sslibrary.com/ss2path/ss2path.dll?bed=2017-01-03&usestyle=1&a=772d46905f1f844450ea6917e04707c01f99f638457abc74&ua=33bd2c2cd46a89e213b7568c1a76b64f02831dddcc8b4b53a42df0d61a62e998&dun=mblib&ssid=11487727", "bookName": "bookname", "message": "", "coverUrl": "","specifyPage":"5"});
+     <br /><br />
+     
+     <input type="button" value="下载doc"   onclick="return downloadDoc()"  />&nbsp;&nbsp;
+      <input type="button" value="在线读doc"   onclick="return readDoc()"  />&nbsp;&nbsp;
+     <br /><br />
+     
+     
+     <input type="button" value="打开指定app"   onclick="return openApp()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_OPEN_APP", { "appid":"gongkaike", "appname":"公开课1"} ) ;
+     <br /><br />
+     
+           打开资源管理器:<input type="file"    />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_FILEINPUTTYPE", { "type":"image"} ) ;
+     <br /><br />
+     
+     <input type="button" value="获取用户信息"   onclick="return getUserInfo()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_GET_USERINFO", {"accountKey":"" } ) ;
+     <br /><br />
+     
+     <input type="button" value="订阅res-专题"   onclick="return subscripResZt()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000001, "cataName":"专题", "key":key_zhuanti,"content":content_zhuanti } ) ;
+     <br /><br />
+     
+     <input type="button" value="打开res-专题"   onclick="return openResZt()"  />&nbsp;&nbsp;
+     jsBridge.postNotification("CLIENT_OPEN_RES", {"cataid":100000001, "cataName":"专题", "key":key,"content":content} ) ;
+     <br /><br />
+     
+     <input type="button" value="订阅res-专题包"   onclick="return subztb()"  />&nbsp;&nbsp;
+	 jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000014, "cataName":"演示", "key":"5be86b86-8243-42d9-b21d-55b2d9d3d8c7","content":{"folderName": "演示","id": "5be86b86-8243-42d9-b21d-55b2d9d3d8c7","logopath": "http://img1.16q.cn/d596c9f9b6c7e2331a3927c052e63201?w={WIDTH}&h={HEIGHT}","pid": 995}  } ) ;
+     <br /><br />
+     <input type="button" value="订阅res-小组"   onclick="return subgroup()"  />&nbsp;&nbsp;
+	 jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000013, "cataName":"小组", "key":"c1eeae112cbf440da1cef5c298b65b2d","content":{"bbsid": "c1eeae112cbf440da1cef5c298b65b2d","createRealName": "马建新","createTime": 1446030979000,"createrId": 21024824,"id": 179545,"logo_img": {"height": 376,"imgUrl": "http://p.ananas.chaoxing.com/star3/origin/5630b86b712e3781d43f88b5.jpg?rw=376&rh=376","litHeight": 100,"litWidth": 100,"litimg": "http://p.ananas.chaoxing.com/star3/100_100f/5630b86b712e3781d43f88b5.jpg?rw=376&rh=376","width": 376},"name": "研发部经典语录","sinfo": ""}     }) ;
+     <br /><br />
+     <input type="button" value="订阅res-课程"   onclick="return subcourse()"  />&nbsp;&nbsp;
+	 jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000002, "cataName":"课程", "key":"463499","content":{"bbsid":"b438c262920ba4e4048a6df1e21008e9","course":{"data":[{"id":85934956,"imageurl":"http://p.ananas.chaoxing.com/star3/origin/550698ca537016c9ba1e1fdf.jpg","name":"高等数学（上）","teacherfactor":"李换琴"}]},"id":463499,"isretire":1,"isthirdaq":1} }) ;
+     <br /><br />
+      <input type="button" value="订阅res-网页"   onclick="return subWeb()"  />&nbsp;&nbsp;
+	 jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000015, "cataName":"网址", "key":"453f0be6e690b36fbeaa071cd8c31b44","content": {"toolbarType": 2, "resTitle": "学术期刊-莫言", "resUrl": "http://m.chaoxing.com/ncs?sw=%E8%8E%AB%E8%A8%80&strchannel=72", "resUid": "453f0be6e690b36fbeaa071cd8c31b44", "resLogo": "http://unicover.zhizhen.com/coverNew/CoverNew.dll?iid=6769656C6E6A656B6766A29D5C9A9FA999A5AC9BA8AF5C673230373736363736"} }) ;
+     <br /><br />
+	
+     <input type="button" value="获取课程订阅状态"   onclick="return subscriptionResStatus1()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_RES_SUBSCRIPTION_STATUS',{"cataid":100000002,"key":"463499"});
+     <br /><br />
+     <input type="button" value="获取res订阅状态"   onclick="return subscriptionResStatus()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_RES_SUBSCRIPTION_STATUS',{"cataid":100000001,"key":"mooc_81664193"});
+     <br /><br />
+     
+     <input type="button" value="取消订阅"   onclick="return resRemove()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_REMOVE_RES',{"cataid":100000001,"key":"mooc_81664193"});
+     <br /><br />
+     
+     <input type="button" value="打开我的课程列表"   onclick="return openMyLessons()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_MYLESSONRES', {});
+     <br /><br />
+     
+     <input type="button" value="打开手机通讯录"   onclick="return openContacts()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_CONTACTS', {}) ;
+     <br /><br />
+     
+     <input type="button" value="打开单位通讯录"   onclick="return openContacts2()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_CONTACTS', {'showType':'1'}) ;
+     <br /><br />
+     
+      <input type="button" value="客户端消息"   onclick="return message()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_DISPLAY_MESSAGE', {'message':'你好'}) ;
+     <br /><br />
+     
+     <input type="button" value="打开个人信息页-tuid"   onclick="return userInfo()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_USERINFO', {"UserID":"22716140"}) ;
+     <br /><br />
+     <input type="button" value="打开个人信息页-puid"   onclick="return userInfo2()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_USERINFO', {"passportID":"33149100"}) ; 
+     <br /><br />
+     
+      <input type="button" value="打开rss详情_新闻"   onclick="return openRss('0')"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_RSS_DETAIL', {"rssType":type,"siteId":"YHr4iryrzSs1","newsId":"-330028491","source":"网易深度"}) ;
+     <br /><br />
+     <input type="button" value="打开rss详情_报纸"   onclick="return openRss('1')"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_RSS_DETAIL', {"rssType":type,"dxid":"100018917410","newsId":"320700000092","source":"111"}) ;
+     <br /><br />
+     
+     
+      <input type="button" value="打开小组"   onclick="return openGroup()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_GROUP', {"GroupId":"…" , "Groupbbsid":"…", "needRecord":"…"}) ;
+     <br /><br />
+     
+     <input type="button" value="打开我的小组列表"   onclick="return openGroupList()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {}) ;
+     <br /><br />
+     
+     <input type="button" value="打开小组市场"   onclick="return openGroupMarket()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {"listType":1}) ;
+     <br /><br />
+     
+     <input type="button" value="打开小组资源"   onclick="return openGroupRes()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_GROUPRES', {"Groupbbsid":"860f12be-f149-455f-af33-312db289958c","GroupId":"881476"}) ;
+     <br /><br />
+     
+     
+     
+     <input type="button" value="打开小组市场+小组列表"   onclick="return openGroupMarketAndList()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {"listType":2}) ;
+     <br /><br />
+     
+     <input type="button" value="打开话题"   onclick="return openTopic()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_TOPIC', {"GroupId":"172022" ,"TopicId":"3618519", "rights":"0"}) ;
+     <br /><br />
+     
+      <input type="button" value="写话题"   onclick="return writeTopic()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_WRITE_TOPIC', {"GroupId":"172022" }) ;
+     <br /><br />
+     
+      <input type="button" value="打开笔记"   onclick="return openNote()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_NOTE_DETAIL', {"uid":"22328615" , "noteCid":"d239f0dd-f989-4877-ad5a-1c9fb998e4e5"}) ;
+     <br /><br />
+     
+      <input type="button" value="打开笔记文件夹"   onclick="return openNoteFolder()"  />&nbsp;&nbsp;
+      jsBridge.postNotification('CLIENT_OPEN_NOTE_FOLDER', {"uid":"22328615" , "notebookCid":"f39d1dcb-1fa1-4eac-8054-2c9d81c4d441")};
+     <br /><br />
+     
+     <input type="button" value="打开移动图书馆"   onclick="return openMarket()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_SUBSCRIPTION_MARKET', {"folderName":"移动图书馆", "folderId":7, "hasSubItem":"1"});
+     <br /><br />
+     
+     <input type="button" value="打开书架"   onclick="return resOpenShuJia()"  />&nbsp;&nbsp;
+     jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000009,"key":"2108","content": content,"cataName":"书架"});
+     <br /><br />
+     
+     <input type="button" value="打开书城(客户端版)"   onclick="return resOpenShucheng()"  />&nbsp;&nbsp;
+      var opts = {"accountKey":"cx_opac","aid":0,"appid":"shucheng","appname":"书城","available":1,"bind":0,"cataid":100000009,"description":"","focus":0,"id":0,"isPrivate":1,"isWebapp":0,"loginId":0,"logopath":"http:\/\/img1.16q.cn\/3bf223b9c8cd20a8a7634ad4b3e3fcf6?w={WIDTH}&h={HEIGHT}","needLogin":0,"needRegist":0,"norder":100,"properties":"","useClientTool":0};
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000009,"key":0,"content": opts,"cataName":""});
+     <br /><br />
+     
+     
+     <input type="button" value="打开课程"   onclick="return resOpenCourse()"  />&nbsp;&nbsp;
+      var opts = {"bbsid": bbsid,"course": {"data": [{"id": 83982063,"imageurl": 'http://p.ananas.chaoxing.com/star3/270_169c/55cd8257e4b0529fd53fc00d.jpg',"name": '大学生创业导论',"teacherfactor": ''}]},"id": 459147};
+	  jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000002,"key":459147,"content": opts,"cataName":"课程"});
+     <br /><br />
+     
+      <input type="button" value="打开学术资源"   onclick="return resOpenXszy()"  />&nbsp;&nbsp;
+      var opts = {"accountKey":"cx_opac","aid":2125,"appid":"xueshuziyuan","appname":"学术资源","available":1,"bind":1,"cataid":100000009,"description":"","focus":0,"id":2125,"isPrivate":1,"isWebapp":0,"loginId":1,"logopath":"http:\/\/img1.16q.cn\/3bf223b9c8cd20a8a7634ad4b3e3fcf6?w={WIDTH}&h={HEIGHT}","needLogin":1,"needRegist":0,"norder":100,"properties":"","useClientTool":0};
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000003,"key":2125,"content": opts,"cataName":""});
+     <br /><br />
+     
+      <input type="button" value="打开发通知列表界面"   onclick="return openNotification(1)"  />&nbsp;&nbsp;
+		jsBridge.postNotification('CLIENT_OPEN_SEND_NOTICE',  {"showType":1}); 
+     <br /><br />
+     
+     <input type="button" value="直接发通知"   onclick="return openNotification(0)"  />&nbsp;&nbsp;
+		jsBridge.postNotification('CLIENT_OPEN_SEND_NOTICE',  {"showType":0}); 
+     <br /><br />
+	
+     
+     <input type="button" value="首页测试1"   onclick="window.location='http://apps.chaoxing.com/home/getHomePage.jspx?incode=test1'"  />&nbsp;&nbsp;
+     <br /><br />
+     
+     <input type="button" value="302返回测试"   onclick="window.location='http://learn.chaoxing.com/jsp/test/redirect1.jsp'"  />&nbsp;&nbsp;
+     <br /><br />
+     
+     选择本地图片并显示：<img id="imgs" src="http://app10.chaoxing.com/beautiful/res/images/series/add.png" class="add fl" width="58" height="58"
+     onclick="openFile()"/>
+     <br /><br />
+     <div id="imghtml">
+     <br /><br />
+     
+     
+     调用通讯录选人协议:
+    <button onclick="chooseContact(false,true)">选择部门</button>
+	<button onclick="chooseContact(false,false)">选择单人</button>
+	<button onclick="chooseContact(true,false)">选择多人</button>
+	<br /><br />
+	<div id="contactHtml">
+	<br /><br />
+	
+	浏览图片协议:
+	<button onclick="seeImg()">查看图片</button><br /><br />
+	
+	专题小花弹框协议:
+	<button onclick="alertZtFlower()">专题小花弹框协议</button><br /><br />
+	
+	打开某个好友订阅协议:
+	<button onclick="friendsubOpen()">打开某个好友书房协议</button><br /><br />
+	打开某个用户订阅协议:
+	<button onclick="mesubOpen()">打开自己书房订阅协议</button><br /><br />
+	
+	<a href="http://192.168.98.140/mobilelib/app/index?dxfid=9324">移图app</a><br /><br />
+     
+     
+        小花弹出协议:
+    <button onclick="openClientFlower()">查看小花</button>
+     jsBridge.postNotification('CLIENT_SHOW_PETAL', {"type": 1,"petalInfo": {"count": {"friendsCount": 48,"myStarCount": 0.2,"mySpecialsSubCount": 5,"noteCount": 12,"opendNoteCount": 1,"pv": 24816,"subCount": 44,"topicCount": 139},"userInfo": {"sex": 1,"isFriend": 1,"right": 8,"name": "王峰（研发）","uid": 20970448}}});
+     
+</body>
+
+
+
+
+<script>
+
+//客户端加载完资源后会自动调用_jsBridgeReady()方法，所以原来放到onload方法，并且和客户端协议有关的
+//那些js方法，都要转到_jsBridgeReady()来调用，这样才能确保调用成功。
+ function _jsBridgeReady(){
+	//定制顶部条右侧菜单--在_jsBridgeReady（）里调用，为了是让客户端将资源协议准备好，再通知客户端在顶部条右侧加菜单，这样才能添加成功。
+	jsBridge.postNotification('CLIENT_CUSTOM_MENU',{show:1, icon:'',menu:'菜单',children:[{menu:'子菜单',option:'a()'},{menu:'子菜单',option:'a()'}]});
+	
+	//file标签弹出的资源类型
+	jsBridge.postNotification('CLIENT_FILEINPUTTYPE', {'type':'image'}) ;
+	
+	//绑定返回刷新事件
+	try{
+	 	jsBridge.bind('CLIENT_REFRESH_EVENT', function(object){
+	 		window.location.reload();
+	 	});  
+	}catch(e){}
+	
+	//去掉左上角的返回键
+	//jsBridge.postNotification('CLIENT_CUSTOM_LEFTBTN',  {"show ":1,"option":"var test"}   );
+} 
+
+function openClientFlower(){
+	jsBridge.postNotification('CLIENT_SHOW_PETAL', {"type": 1,"petalInfo": {"count": {"friendsCount": 48,"myStarCount": 0.2,"mySpecialsSubCount": 5,"noteCount": 12,"opendNoteCount": 1,"pv": 24816,"subCount": 44,"topicCount": 139},"userInfo": {"sex": 1,"isFriend": 1,"right": 8,"name": "王峰（研发）","uid": 20970448}}});
+}
+
+//客户端顶部条右侧菜单点击后的回调js方法
+function a(){
+	alert("调用了js的a()方法");
+}
+
+function skip(loadType,url){
+	url = "http://learn.chaoxing.com/html/test/CXJSBridge2.html"+url;
+	jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'123', 'loadType':loadType  ,'webUrl':url});
+}
+
+try{
+	jsBridge.bind('CLIENT_OPEN_URL', function(object){
+		alert("result="+object.result)
+	});  
+}catch(e){}
+
+function skip2(){
+	var url = "CXJSBridge2.html";
+	window.location.href = url;
+}
+
+//打开语音识别
+try{
+	jsBridge.bind('CLIENT_SPEECH_RECOGNIZER', function(object){
+		alert("msg="+object.message);
+	});  
+}catch(e){}
+
+function speach(){
+	jsBridge.postNotification('CLIENT_SPEECH_RECOGNIZER', {}) ;
+}
+//打开语音识别  -end
+
+//退出app
+function exit(){
+	jsBridge.postNotification('CLIENT_EXIT_WEBAPP', {}) ;
+}
+
+//打开条码扫描
+try{
+	jsBridge.bind('CLIENT_BARCODE_SCANNER', function(object){
+		alert("msg="+object.message);
+	});  
+}catch(e){}
+
+function barcode(){
+	jsBridge.postNotification('CLIENT_BARCODE_SCANNER', {}) ;
+}
+//打开条码扫描  --end
+
+//用客户端播放视频
+function video(){
+	var mp4 = "http://file.m.superlib.com/PublicClass/mp4/20130917/1/123/1.mp4";
+	var m3u8 = "http://file.m.superlib.com/PublicClass/m3u8/20130917/1/123/1/index_hd.m3u8"; 	
+	var title = "麻将文化";
+	jsBridge.postNotification('CLIENT_VIDEO_PLAYER', {"videolist":[{ "videopathm3u8":m3u8, "videopathmp4": mp4,"title":"麻将文化1"},{ "videopathm3u8":m3u8, "videopathmp4": mp4,"title":"麻将文化2"}],
+		"title": "麻将"}
+	) ;
+}
+
+//用客户端播放音频
+function playAudio(){
+	var path1 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/3.mp3";
+    var path2 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/9.mp3";
+	jsBridge.postNotification('CLIENT_AUDIO_PLAYER', {"sourceType":1,"title":"名称","activeIndex":0,"list":[{"mediaId":"id1","mediaTitle":"name1","mediaPath":path1,"mediaPathIOS":path1},{"mediaId":"id2","mediaTitle":"name2","mediaPath":path2,"mediaPathIOS":path2}]} ) ;
+}
+
+
+//获取当前位置坐标
+try{
+	jsBridge.bind('CLIENT_USER_LOCATION', function(object){
+		//经度纬度海拔
+		alert(object.latitude+"   "+object.longitude+"  "+object.altitude);
+	});  
+}catch(e){}
+
+function getlocation(accountKey){
+	jsBridge.postNotification("CLIENT_USER_LOCATION", {} ) ;
+}
+//获取当前位置坐标
+
+//获取登录状态
+try{
+	jsBridge.bind('CLIENT_LOGIN_STATUS', function(object){
+		alert(object.accountKey+"   "+object.status);
+	});  
+}catch(e){}
+
+function loginStatus(accountKey){
+	jsBridge.postNotification("CLIENT_LOGIN_STATUS", {"accountKey":accountKey} ) ;
+}
+//获取登录状态  --end
+
+//客户端登录
+try{
+	jsBridge.bind('CLIENT_LOGIN', function(object){
+		alert(object.status);
+	});  
+}catch(e){}
+
+function login(){
+	jsBridge.postNotification("CLIENT_LOGIN", {"accountKey":"cx_opac"} ) ;
+}
+//客户端登录 --end
+
+//获取在架图书的dxid列表
+try{
+	jsBridge.bind('CLIENT_BOOKS_ON_SHELF', function(object){
+		alert(object.ids);
+	});  
+}catch(e){}
+
+function getBooks(){
+	jsBridge.postNotification("CLIENT_BOOKS_ON_SHELF", {} ) ;
+}
+//获取在架图书的dxid列表 --end
+
+//打开图书页详情
+function bookDetail(){
+	jsBridge.postNotification("CLIENT_OPEN_BOOK_DETAIL", {"dxNumber":"000011657689", "d":"08903202d03c1cb664cbf8b35d798acf", "languageType":0} ) ;
+}
+
+//下载图书
+function downloadBook(){
+	jsBridge.postNotification('CLIENT_DOWNLOAD_BOOK', {"type": "pdzx", "remoteUrl": "http://epubrss.superlib.com/epubpdzx/151123/TS14001633.pdzx", "bookName": "狼王巴克:野性的呼唤", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+}
+
+//在线阅读图书
+function readBook(){
+	jsBridge.postNotification('CLIENT_READ_BOOK', {"type": "pdzx", "remoteUrl": "http://epubrss.superlib.com/epubpdzx/151123/TS14001633.pdzx", "bookName": "狼王巴克:野性的呼唤", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+}
+//在线阅读图书-pdz
+function readBook2(){
+	jsBridge.postNotification('CLIENT_READ_BOOK', {"type": "pdz/path","uniqueID":"", "remoteUrl": "book://read.sslibrary.com/ss2path/ss2path.dll?bed=2017-01-03&usestyle=1&a=772d46905f1f844450ea6917e04707c01f99f638457abc74&ua=33bd2c2cd46a89e213b7568c1a76b64f02831dddcc8b4b53a42df0d61a62e998&dun=mblib&ssid=11487727", "bookName": "bookname", "message": "", "coverUrl": "","specifyPage":"5"});
+}
+
+//下载doc
+function downloadDoc(){
+	jsBridge.postNotification('CLIENT_DOWNLOAD_BOOK', {"type": "doc", "remoteUrl": "http://learn.chaoxing.com/res/doc/1.doc", "bookName": "webapp交互规则", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+}
+
+//在线读doc
+function readDoc(){
+	jsBridge.postNotification('CLIENT_READ_BOOK', {"type": "doc", "remoteUrl": "http://learn.chaoxing.com/res/doc/1.doc", "bookName": "webapp交互规则", "message": "", "coverUrl": "http://epubrss.superlib.com/epubcover/151123/TS14001633.jpg"});
+}
+
+
+
+
+
+
+//打开指定app
+function openApp(){
+	jsBridge.postNotification("CLIENT_OPEN_APP", { "appid":"gongkaike", "appname":"公开课1"} ) ;
+}
+
+//获取用户信息
+try{
+	jsBridge.bind('CLIENT_GET_USERINFO', function(object){
+		alert(object.uid+"   "+object.name + "  "+object.puid+"  "+object.email);
+	});  
+}catch(e){}
+
+function getUserInfo(){
+	jsBridge.postNotification("CLIENT_GET_USERINFO", {"accountKey":"" } ) ;
+}
+//获取用户信息  --end
+
+//打开/订阅res-专题
+	var key_zhuanti = "mooc_89350231";
+	var content_zhuanti = {
+		    "accountKey": "cx_fanya",
+		    "aid": "mooc_89350231",
+		    "appid": "C8E9BE115DB62473C93581FF773F8459",
+		    "appname": "《元气少女缘结神》漫画",
+		    "appurl": "https://special.zhexuezj.cn/mobile/mooc/tocourse/89350231",
+		    "available": 1,
+		    "bind": 1,
+		    "cataid": "100000001",
+		    "clientType": 127,
+		    "description": "",
+		    "focus": 0,
+		    "id": -1,
+		    "isPrivate": 1,
+		    "isWebapp": 1,
+		    "loginId": 2,
+		    "loginUrl": "",
+		    "logopath": "http://p.ananas.chaoxing.com/star3/258_153c/f1df98c137a8f270005a355d2730a9ac.png",
+		    "logoshowtype": 1,
+		    "needLogin": 0,
+		    "needRegist": 0,
+		    "norder": 0,
+		    "otherConfig": {
+		        "author": "铃木JULIETTA",
+		        "authorPuid": 22073082,
+		        "id": "mooc_89350231"
+		    },
+		    "productId": 3,
+		    "properties": "",
+		    "rights": 1,
+		    "usable": "",
+		    "useClientTool": 2
+		};
+function subscripResZt(){
+	jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000001, "cataName":"专题", "key":key_zhuanti,"content":content_zhuanti } ) ;
+}
+try{
+	jsBridge.bind('CLIENT_SUBSCRIBE_RES', function(object){
+		alert(JSON.stringify(object));
+	});  
+}catch(e){}
+
+function openResZt(){
+	jsBridge.postNotification("CLIENT_OPEN_RES", {"cataid":100000001, "cataName":"专题", "key":key_zhuanti,"content":content_zhuanti } ) ;
+}
+//订阅res --end
+
+//订阅res-专题包
+function subztb(){
+	jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000014, "cataName":"演示", "key":"5be86b86-8243-42d9-b21d-55b2d9d3d8c7","content":{"folderName": "演示","id": "5be86b86-8243-42d9-b21d-55b2d9d3d8c7","logopath": "http://img1.16q.cn/d596c9f9b6c7e2331a3927c052e63201?w={WIDTH}&h={HEIGHT}","pid": 995}  } ) ;
+}
+
+//订阅res-小组
+function subgroup(){
+    var info =  {"cataid":100000013, "cataName":"小组", "key":"c1eeae112cbf440da1cef5c298b65b2d","content":{"bbsid": "c1eeae112cbf440da1cef5c298b65b2d","createRealName": "马建新","createTime": 1446030979000,"createrId": 21024824,"id": 179545,"logo_img": {"height": 376,"imgUrl": "http://p.ananas.chaoxing.com/star3/origin/5630b86b712e3781d43f88b5.jpg?rw=376&rh=376","litHeight": 100,"litWidth": 100,"litimg": "http://p.ananas.chaoxing.com/star3/100_100f/5630b86b712e3781d43f88b5.jpg?rw=376&rh=376","width": 376},"name": "研发部经典语录","sinfo": ""}     };
+    if (cxVersion.respondToSelector('app.group.subscribe')) {
+        app.group.subscribe(info);
+    }
+    else {
+        jsBridge.postNotification("CLIENT_SUBSCRIBE_RES",info) ;
+    }
+}
+//订阅res-课程
+function subcourse(){
+	jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000002, "cataName":"课程", "key":"463499","content":{"bbsid":"b438c262920ba4e4048a6df1e21008e9","course":{"data":[{"id":85934956,"imageurl":"http://p.ananas.chaoxing.com/star3/origin/550698ca537016c9ba1e1fdf.jpg","name":"高等数学（上）","teacherfactor":"李换琴"}]},"id":463499,"isretire":1,"isthirdaq":1} }) ;
+}
+//订阅res-网页
+function subWeb(){
+	jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {"cataid":100000015, "cataName":"网址", "key":"453f0be6e690b36fbeaa071cd8c31b44","content": {"toolbarType": 2, "resTitle": "学术期刊-莫言", "resUrl": "http://m.chaoxing.com/ncs?sw=%E8%8E%AB%E8%A8%80&strchannel=72", "resUid": "453f0be6e690b36fbeaa071cd8c31b44", "resLogo": "http://unicover.zhizhen.com/coverNew/CoverNew.dll?iid=6769656C6E6A656B6766A29D5C9A9FA999A5AC9BA8AF5C673230373736363736"} }) ;
+}
+
+
+function subscriptionResStatus1(){
+	jsBridge.postNotification('CLIENT_RES_SUBSCRIPTION_STATUS',{"cataid":100000002,"key":"463499"});
+}
+
+//获取res订阅状态
+function subscriptionResStatus(){
+	jsBridge.postNotification('CLIENT_RES_SUBSCRIPTION_STATUS',{"cataid":100000001,"key":"mooc_81664193"});
+}
+
+try{
+	jsBridge.bind('CLIENT_RES_SUBSCRIPTION_STATUS', function(object){
+		alert(JSON.stringify(object));
+	});  
+}catch(e){}
+//获取res订阅状态  --end
+
+//取消订阅
+function resRemove(){
+	jsBridge.postNotification('CLIENT_REMOVE_RES',{"cataid":100000001,"key":"mooc_81664193"});
+}
+
+try{
+	jsBridge.bind('CLIENT_REMOVE_RES', function(object){
+		alert(JSON.stringify(object));
+	});  
+}catch(e){}
+//取消订阅  --end
+
+
+
+
+
+//调用手机通讯录或单位通讯录
+try{
+	jsBridge.bind('CLIENT_OPEN_CONTACTS', function(object){
+		var userList = new Array();  
+		var list = object.contacts;
+		for(var i=0; i<list.length; i++){  
+			var name = list[i].name;
+			var phone = list[i].phone;
+			var email = list[i].email;
+			alert(name+"  "+phone); 
+		}
+	});  
+}catch(e){}
+
+function openContacts(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_CONTACTS', {'showType':'0'}) ;
+	}catch(e){}
+}
+
+function openContacts2(){
+	try{
+		//showType=1 单位通讯录   2自建通讯录
+		jsBridge.postNotification('CLIENT_OPEN_CONTACTS', {'showType':'1'}) ;
+	}catch(e){}
+}
+//调用手机通讯录或单位通讯录  -end
+
+//打开我的课程列表
+function openMyLessons(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_MYLESSONRES', {});
+	}catch(e){}
+}
+
+
+//调用客户端消息提示
+function message(){
+	try{
+		jsBridge.postNotification('CLIENT_DISPLAY_MESSAGE', {'message':'你好'}) ;
+	}catch(e){}
+}
+
+//查看某人信息
+function userInfo(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_USERINFO', {"UserID":"22716140"}) ;  //根据tuid打开
+	}catch(e){}
+}
+function userInfo2(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_USERINFO', {"passportID":"33149100"}) ; //根据puid打开，同时存在这个参数优先
+	}catch(e){}
+}
+
+function openRss(type){
+	try{
+		if(type == "0"){
+			jsBridge.postNotification('CLIENT_OPEN_RSS_DETAIL', {"rssType":type,"siteId":"YHr4iryrzSs1","newsId":"-330028491","source":"网易深度"}) ;
+		}
+		if(type == "1"){
+			jsBridge.postNotification('CLIENT_OPEN_RSS_DETAIL', {"rssType":type,"dxid":"100018917410","newsId":"320700000092","source":"111"}) ;
+		}
+	}catch(e){}
+}
+
+//打开小组
+function openGroup() {
+	try{
+		var param = {"GroupId":"172022" , "needRecord":"true"};
+        if (cxVersion.respondToSel('app.module.openGroup')) {
+            app.module.openGroup(param);
+        }
+        else {
+            jsBridge.postNotification('CLIENT_OPEN_GROUP', param) ;
+        }
+	}catch(e){}
+}
+
+//打开话题
+function openTopic(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_TOPIC', {"GroupId":"172022" ,"TopicId":"3618519", "rights":"0"}) ;
+	}catch(e){}
+}
+
+//写话题
+function writeTopic(){
+	try{
+		jsBridge.postNotification('CLIENT_WRITE_TOPIC', {"GroupId":"172022" }) ;
+	}catch(e){}
+}
+
+//打开笔记
+function openNote(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_NOTE_DETAIL', {"uid":"22328615" , "noteCid":"d239f0dd-f989-4877-ad5a-1c9fb998e4e5"}) ;
+	}catch(e){}
+}
+
+function addGroup1(){
+	try{
+		jsBridge.postNotification('CLIENT_ADDTO_GROUP',  {"groupInfo":'{"id":867233,"isCheck":0}',"uid":"22328615"});
+	}catch(e){}
+}
+function addGroup2(){
+	try{
+		jsBridge.postNotification('CLIENT_ADDTO_GROUP',  {"groupInfo":'{"id":867233,"isCheck":1}',"uid":"22328615"});
+	}catch(e){}
+}
+
+//打开笔记文件夹
+function openNoteFolder(){
+	try{
+		jsBridge.postNotification('CLIENT_OPEN_NOTE_FOLDER', {"uid":"22328615" , "notebookCid":"f39d1dcb-1fa1-4eac-8054-2c9d81c4d441"});
+	}catch(e){}
+}
+
+
+
+//打开移图
+function openMarket(){
+	try{
+		jsBridge.postNotification('CLIENT_SUBSCRIPTION_MARKET', {"folderName":"移动图书馆", "folderId":7, "hasSubItem":"1"});
+	}catch(e){}
+}
+
+//打开书架
+function resOpenShuJia(){
+	var content = {"accountKey": "","aid": "2108","appid": "tushu","appname": "书架","appurl": "","available": "1","bind": "1","cataid": "0","description": "","extendField": "","focus": "0","id": "2108","isPrivate": "1","isWebapp": "0","loginId": "0","logopath": "http://img1.16q.cn/ab5a8d921470c687c19e380a6a395905?w={WIDTH}&h={HEIGHT}","needLogin": "0","needRegist": "0","norder": "15","properties": "","useClientTool": "1"}
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000009,"key":"2108","content": content,"cataName":"书架"});
+}
+//打开书城
+function resOpenShucheng(){
+	var opts = {"accountKey":"cx_opac","aid":0,"appid":"shucheng","appname":"书城","available":1,"bind":0,"cataid":100000009,"description":"","focus":0,"id":0,"isPrivate":1,"isWebapp":0,"loginId":0,"logopath":"http:\/\/img1.16q.cn\/3bf223b9c8cd20a8a7634ad4b3e3fcf6?w={WIDTH}&h={HEIGHT}","needLogin":0,"needRegist":0,"norder":100,"properties":"","useClientTool":0};
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000009,"key":0,"content": opts,"cataName":""});
+}
+
+
+//打开课程
+function resOpenCourse(){
+	var opts = {"bbsid": '82da454b39fb1100fdc9217fcd6e8cf5',"course": {"data": [{"id": 83982063,"imageurl": 'http://p.ananas.chaoxing.com/star3/270_169c/55cd8257e4b0529fd53fc00d.jpg',"name": '大学生创业导论',"teacherfactor": ''}]},"id": 459147};
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000002,"key":459147,"content": opts,"cataName":"课程"}); 
+}
+
+//打开学术资源
+function resOpenXszy(){
+	var opts = {"accountKey":"cx_opac","aid":2125,"appid":"xueshuziyuan","appname":"学术资源","available":1,"bind":1,"cataid":100000009,"description":"","focus":0,"id":2125,"isPrivate":1,"isWebapp":0,"loginId":1,"logopath":"http:\/\/img1.16q.cn\/3bf223b9c8cd20a8a7634ad4b3e3fcf6?w={WIDTH}&h={HEIGHT}","needLogin":1,"needRegist":0,"norder":100,"properties":"","useClientTool":0};
+	jsBridge.postNotification('CLIENT_OPEN_RES',  {"cataid":100000009,"key":2125,"content": opts,"cataName":""});
+}
+
+
+
+
+//打开发通知列表界面
+function openNotification(type){
+	//type(int型):  1进入到通知列表(里面是我发的通知记录以及发通知按钮)  0直接发通知(想当于点击了1里面的通知按钮)
+	jsBridge.postNotification('CLIENT_OPEN_SEND_NOTICE',  {"showType":type}); 
+}
+
+//打开小组列表
+function openGroupList(){
+	jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {}) ; 
+}
+
+//打开小组市场
+function openGroupMarket(){
+	jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {"listType":1}) ; 
+}
+
+//打开小组资源
+function openGroupRes(){
+	jsBridge.postNotification('CLIENT_OPEN_GROUPRES', {"Groupbbsid":"860f12be-f149-455f-af33-312db289958c","GroupId":"881476"}) ; 
+}
+
+//打开小组市场+小组列表
+function openGroupMarketAndList(){
+	jsBridge.postNotification('CLIENT_OPEN_GROUPLIST', {"listType":2}) ; 
+}
+
+
+//选择本地图片并显示
+var jsBridge_cmd_handlers = {};
+function openFile() {
+    //发送消息。
+    //camare=1只能拍照  camare=2拍照加选择本地图片   camare=3只能选择本地视频
+    jsBridge.postNotification('CLIENT_CHOOSE_IMAGE',{"camare":1});
+
+    if (!jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"]) {
+
+        var handler=jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"]=function (object) {
+            var html = "";
+            //返回格式camare=0或=1:{"files":[{"type":"image/jpeg","name":"xxx.jepg","data":"....."},{"type":"image/jpeg","name":"xxx.jepg","data":"....."}]}
+            //返回格式camare=2:{"name":"123.mp4","files":base64数据}
+            //注意：客户端返回的文件是一个base64编码的字符串，有文件流转换而成的。上传时候，直接走post提交给服务端，
+            //服务端接收到了这个字符串后，再根据base64解码成流，之后转换成对应的文件保存在服务端即可
+            //客户端返回的图片type分类	
+            var image_mime = {
+                    "jpe": "image/jpeg",
+                    "jpeg": "image/jpeg",
+                    "jpg": "image/jpeg",
+                    "bmp": "image/bmp",
+                    "dib": "image/bmp",
+                    "gif": "image/gif",
+                    "ief": "image/ief",
+                    "png": "image/png",
+                    "pnz": "image/png",
+                    "svg": "image/svg+xml",
+                    "ico": "image/x-icon",
+                };
+            if (object && object.files) {
+                object.files.forEach(function (item) {
+                    var img = "data:" + item.type + ";base64," + item.data;
+                    html += "<img src='" + img + "' width='200' height='200' /> <br />";
+                })
+            }else{
+            	html = "无数据";
+            }
+            document.getElementById("imghtml").innerHTML = html;
+        };
+        try {
+            jsBridge.bind('CLIENT_CHOOSE_IMAGE_RESULT',handler);
+        } catch (e) {
+            alert(e);
+        }
+    }
+}
+
+//调用通讯录选人协议:
+function chooseContact(m, d) {
+    //发送消息。
+    jsBridge.postNotification('CLIENT_CHOOSE_CONTACT', {"multiple": m || false, "chooseDept": d || false});
+
+    if (!jsBridge_cmd_handlers["CLIENT_CHOOSE_CONTACT_RESULT"]) {
+        var handler=jsBridge_cmd_handlers["CLIENT_CHOOSE_CONTACT_RESULT"]=function (object) {
+            var html = "";
+            if (object && object.personList) {
+                html += JSON.stringify(object.personList);
+            }
+            if (object && object.deptList) {
+                html += JSON.stringify(object.deptList);
+            }
+            document.getElementById("contactHtml").innerHTML = html;
+        };
+        try {
+            jsBridge.bind('CLIENT_CHOOSE_CONTACT_RESULT',handler);
+        } catch (e) {
+            alert(e);
+        }
+    }
+}
+
+function seeImg(){
+	var op = {"showIndex":1,"imageUrls":[{"imageUrl":"http://p.ananas.chaoxing.com/star3/origin/56f22bd4e4b0578413c5d02e.jpg?rw=640&rh=182"},{"imageUrl":"http://img1.16q.cn/a56626a15a1c2cc92d0b0972e3d086ba"},{"imageUrl":"http://www.baidu.com/img/bd_logo1.png"}] };
+	jsBridge.postNotification('CLIENT_PREVIEW_IMAGES', op ) ;
+}
+
+function alertZtFlower(){
+	var opt = {
+		    "type": 2,   //1:个人小花，2：专题小花
+		    "petalInfo": {
+					        "count": {
+					            "praiseCount": 190,    //点赞量
+					            "readCount": 23655,  //阅读量
+					            "subCount": 3100,      //订阅量
+					            "topicCount": 153        //评论量
+					        },
+					        "title": "xxx专题"      
+					     }
+	};
+	jsBridge.postNotification('CLIENT_SHOW_PETAL', opt) ; 
+}
+
+
+function friendsubOpen(){
+	var opt = {"userInfo":{"uid" : "20970448","realName" : "王峰","nickName" : ""}} ;
+	jsBridge.postNotification('CLIENT_USER_SUBSCRIBES', opt) ;
+}
+
+function mesubOpen(){
+	var opt = {"uid":"22328615","puid":"22328615"} ;
+	jsBridge.postNotification('CLIENT_OPEN_SUBS', opt) ;
+}
+
+
+
+</script>
+</html>

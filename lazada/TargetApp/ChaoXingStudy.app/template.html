@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <base href="%@/"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no"/>
+
+        <script type="text/javascript">
+            function loadsuccess()
+            {
+                document.location = "nativeapi://webLoadFinish";
+            }
+            document.domain = '%@';
+            window.onload = loadsuccess;
+            window.AttachmentSetting = %@
+        </script>
+
+        <title></title>
+
+        <link href="/ananas/ueditor/themes/iframe_wap.css?v=%@" type="text/css" rel="stylesheet"/>
+        <script src="/ananas/ext-4.2.0.663/ext.js?v=%@"></script>
+        <script src="/ananas/ueditor/ueditor.parse_wap.js?v=%@"></script>
+       
+    </head>
+   <body onload = "loadsuccess()">
+        
+        <div class="ans-cc">%@</div>
+        <script>
+            uParse(".ans-cc");
+            </script>
+    </body>
+</html>
