@@ -28,11 +28,11 @@
 
 2. 普通安装
 
-*  点击`clone or download`下载项目并解压，打开`Terminal(终端)`，打开`lazada.xcodeproj`然后`Command+R`运行工程。
+*  点击`clone or download`下载项目并解压，打开`Terminal(终端)`，打开`XueXiTong.xcodeproj`然后`Command+R`运行工程。
 
 3. 重编译安装
 
-*  点击`clone or download`下载项目，`lazada.xcodeproj`。然后运行工程，如果用户`Xcode`有打印内容，证明成功。
+*  点击`clone or download`下载项目，`XueXiTong.xcodeproj`。然后运行工程，如果用户`Xcode`有打印内容，证明成功。
 
 依赖
 ------
