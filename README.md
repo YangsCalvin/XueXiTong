@@ -24,7 +24,7 @@
 ------
 1. 懒人安装 
 
-*  打开 `实用工具-` >`Terminal(终端)`，执行以下命令即可。(需要git支持) `cd ~/Downloads && git https://github.com/CodyCalvin/XueXiTong.git`
+*  打开 `实用工具-` >`Terminal(终端)`，执行以下命令即可。(需要git支持) `cd ~/Downloads && git clone https://github.com/CodyCalvin/XueXiTong.git`
 
 2. 普通安装
 
